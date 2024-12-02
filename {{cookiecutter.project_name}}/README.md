@@ -1,10 +1,10 @@
-# {{cookiecutter.project_name}}
+# {{cookiecutter.project_name}} by @{{cookiecutter.author_github_handle}}
 
 {{cookiecutter.project_description}}
 
-- **GitHub repository**: <https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}/>
+- **GitHub Repository**: <https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}/>
 
-## Getting started with your project
+## Getting Started
 
 ### 1. Create a New Repository
 
@@ -46,9 +46,33 @@ git commit -m 'Fix formatting issues'
 git push origin main
 ```
 
-You are now ready to start development on your project!
+You are now ready to solving Advent of Code, in style!
 
+Tip: If you're using devcontainers, just execute `code .` and you're good to go. :)
+
+## Project Structure
+
+Within your project folder ({{cookiecutter.project_name}}/{{cookiecutter.project_slug}}), you've got a python file for each day you need to solve, such as `01.py`, as well as a corresponding input file, such as `input/01.txt`. You can update the code to solve the puzzle, and put your input in the text file as per Advent of Code (feel free to skip checking it in).
+
+You've also got the following:
+
+- `{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/runner.py`: The CLI; check it out for arguments, or execute the project with `-h`.
+- `{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/utils.py`: A utilities file to get you started, but feel free to flesh it out. :)
+
+## Executing the CLI
+
+If you're in the devcontainer:
+
+```
+python -m {{cookiecutter.project_name}}
+```
+
+If you're outside of the devcontainer:
+
+```
+uv run python -m {{cookiecutter.project_name}}
+```
 
 ## Attribution
 
-Repository initiated with [lskillen/cookiecutter-py-aoc](https://github.com/lskillen/cookiecutter-py-aoc).
+Repository initialized with [lskillen/cookiecutter-py-aoc](https://github.com/lskillen/cookiecutter-py-aoc), for a rockin' around the tree good time, developing Advent of Code solutions using Python+uv+ruff+mypy+pytest. Come and get your own; yes, you.
