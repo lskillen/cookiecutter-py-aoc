@@ -54,6 +54,6 @@ Feldroy](https://github.com/audreyfeldroy)\'s great
 [cookiecutter-pypackage](https://github.com/audreyfeldroy/cookiecutter-pypackage)
 repository.
 
-It's also *heavily* based on [Florian Maas](https://github.com/fpgmaas)' awesome [cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv) repository.
+It's also _heavily_ based on [Florian Maas](https://github.com/fpgmaas)' awesome [cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv) repository.
 
 Thank you, to both, so that we may AoC in joy!

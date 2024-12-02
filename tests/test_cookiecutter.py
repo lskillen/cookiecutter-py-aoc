@@ -5,7 +5,7 @@ import shlex
 import subprocess
 from datetime import datetime
 
-from tests.utils import file_contains_text, is_valid_yaml, run_within_dir
+from tests.utils import run_within_dir
 
 
 def test_bake_project(cookies):
@@ -74,9 +74,7 @@ def test_day_templates(cookies, tmp_path):
             day = str(n).rjust(2, "0")
             day_path = f"{result.project_path}/{result.context['project_slug']}/{day}.py"
             assert os.path.isfile(day_path)
-            assert os.path.isfile(
-                f"{result.project_path}/{result.context['project_slug']}/input/{day}.txt"
-            )
-            with open(day_path, "r") as f:
+            assert os.path.isfile(f"{result.project_path}/{result.context['project_slug']}/input/{day}.txt")
+            with open(day_path) as f:
                 contents = f.read()
             assert f"Advent of Code: {year} - Day {day}" in contents

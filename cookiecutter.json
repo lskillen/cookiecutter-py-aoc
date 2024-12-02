@@ -17,7 +17,7 @@
         "Not open source"
     ],
     "__prompts__": {
-      "dockerfile": "Answer 'y' to setup a containerised environment (recommended)",
-      "devcontainer": "Answer 'y' to setup a devcontainer for VSCode (recommended)"
+        "dockerfile": "Answer 'y' to setup a containerised environment (recommended)",
+        "devcontainer": "Answer 'y' to setup a devcontainer for VSCode (recommended)"
     }
 }

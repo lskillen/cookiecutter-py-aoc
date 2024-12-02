@@ -29,7 +29,7 @@ def run():
         shutil.copyfile(template_path, day_path)
 
         # Replace the day variable
-        with open(day_path, "r") as f:
+        with open(day_path) as f:
             contents = f.read()
         contents = contents.replace("#DAY", day)
         with open(day_path, "w") as f:
