@@ -64,3 +64,19 @@ def test_not_dockerfile(cookies, tmp_path):
         result = cookies.bake(extra_context={"dockerfile": "n"})
         assert result.exit_code == 0
         assert not os.path.isfile(f"{result.project_path}/Dockerfile")
+
+
+def test_day_templates(cookies, tmp_path):
+    with run_within_dir(tmp_path):
+        result = cookies.bake()
+        year = datetime.now().strftime("%Y")
+        for n in range(1, 26):
+            day = str(n).rjust(2, "0")
+            day_path = f"{result.project_path}/{result.context['project_slug']}/{day}.py"
+            assert os.path.isfile(day_path)
+            assert os.path.isfile(
+                f"{result.project_path}/{result.context['project_slug']}/input/{day}.txt"
+            )
+            with open(day_path, "r") as f:
+                contents = f.read()
+            assert f"Advent of Code: {year} - Day {day}" in contents

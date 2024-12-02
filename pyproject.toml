@@ -64,9 +64,7 @@ warn_unused_ignores = true
 show_error_codes = true
 
 [tool.deptry]
-extend_exclude = [
-  ".+/test_foo.py"
-]
+extend_exclude = []
 
 [tool.deptry.per_rule_ignores]
 DEP002 = ["cookiecutter"]

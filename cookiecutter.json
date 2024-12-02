@@ -3,8 +3,9 @@
     "email": "you@example.com",
     "author_github_handle": "your-handle",
     "project_name": "aoc{% now 'utc', '%Y' %}",
-    "project_slug": "{{cookiecutter.project_name|lower|replace('-', '_')}}",
+    "project_slug": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_')}}",
     "project_description": "Advent of Code: {% now 'utc', '%Y' %}",
+    "year": "{% now 'utc', '%Y' %}",
     "dockerfile": ["y", "n"],
     "devcontainer": ["y", "n"],
     "open_source_license": [

@@ -4,7 +4,7 @@ version = "0.0.1"
 description = "{{cookiecutter.project_description}}"
 authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" }]
 readme = "README.md"
-keywords = ['python']
+keywords = ["python", "adventofcode", "aoc", "{{cookiecutter.year}}", "aoc{{cookiecutter.year}}"]
 requires-python = ">=3.9,<4.0"
 classifiers = [
     "Intended Audience :: Developers",
@@ -27,7 +27,11 @@ Documentation = "https://{{cookiecutter.author_github_handle}}.github.io/{{cooki
 dev-dependencies = [
     "pytest>=7.2.0",
     "pre-commit>=2.20.0",
+    "deptry>=0.20.0",
     "mypy>=0.991",
+    "psutil>=6.1.0",
+    "rich>=13.9.4",
+    "rich-argparse>=1.6.0",
     "ruff>=0.6.9",
 ]
 
@@ -49,11 +53,11 @@ warn_unused_ignores = true
 show_error_codes = true
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = []
 
 [tool.ruff]
 target-version = "py39"
-line-length = 120
+line-length = 90
 fix = true
 
 [tool.ruff.lint]
@@ -97,7 +101,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = ["S101"]
+"**/*" = ["S101"]
 
 [tool.ruff.format]
 preview = true
