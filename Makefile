@@ -11,7 +11,7 @@ bake-and-test-deploy: ## For quick publishing to cookiecutter-uv-example to test
 	@rm -rf cookiecutter-uv-example || true
 	@uv run cookiecutter --no-input . --overwrite-if-exists \
 		author="Lee Skillen" \
-		email="lskillen@gmail.com" \
+		email="lskillen@users.noreply.github.com" \
 		github_author_handle=lskillen \
 		project_name=cookiecutter-py-aoc2024 \
 		project_slug=cookiecutter_py_aoc2024
