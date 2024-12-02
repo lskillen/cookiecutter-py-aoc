@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="600" src="https://raw.githubusercontent.com/lskillen/cookiecutter-py-aoc/main/docs/static/cookiecutter.svg">
+  <img width="600" src="https://raw.githubusercontent.com/lskillen/cookiecutter-py-aoc/static/images/cookiecutter_py_aoc_logo.png">
 </p style = "margin-bottom: 2rem;">
 
 ---
@@ -8,16 +8,24 @@
 [![Supported Python versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11_%7C_3.12_%7C_3.13-blue?labelColor=grey&color=blue)](https://github.com/lskillen/cookiecutter-py-aoc/blob/main/pyproject.toml)
 [![License](https://img.shields.io/github/license/lskillen/cookiecutter-py-aoc)](https://img.shields.io/github/license/lskillen/cookiecutter-py-aoc)
 
-This is a modern Cookiecutter template that can be used to initiate a Python project with all the necessary tools for development, testing, and deployment. It supports the following features:
+This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) project for generating a skeleton Python-based Advent of Code toolkit. Ready for you to fill out and solve the puzzles each year, in Python. You bring the brains, I'll bring the brawn-y templates. Features included:
 
-- [uv](https://docs.astral.sh/uv/) for dependency management
-- CI/CD with [GitHub Actions](https://github.com/features/actions)
-- Pre-commit hooks with [pre-commit](https://pre-commit.com/)
-- Code quality with [ruff](https://github.com/charliermarsh/ruff), [mypy](https://mypy.readthedocs.io/en/stable/), and [prettier](https://prettier.io/)
-- Publishing to [PyPI](https://pypi.org) by creating a new release on GitHub
+- Performance measuring CLI, for executing your daily solutions in style; with a few options to make sharing easy.
+- Delightful [rich](https://github.com/Textualize/rich)-based colour highlighting.
+- [uv](https://docs.astral.sh/uv/) for dependency management.
+- Pre-commit hooks with [pre-commit](https://pre-commit.com/).
+- Formatting with [ruff](https://github.com/charliermarsh/ruff) and [prettier](https://prettier.io/).
+- Type checking with [mypy](https://mypy.readthedocs.io/en/stable/).
 - Testing with [pytest](https://docs.pytest.org/en/7.1.x/)
-- Containerization with [Docker](https://www.docker.com/)
-- Development environment with [VSCode devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
+- Containerization with [Docker](https://www.docker.com/).
+- Development environment with [VSCode devcontainers](https://code.visualstudio.com/docs/devcontainers/containers).
+- Made with lurve. :heart:
+
+Example of the CLI in action:
+
+<p align="center">
+  <img width="600" src="https://raw.githubusercontent.com/lskillen/cookiecutter-py-aoc/static/images/aoc_runner.png">
+</p style = "margin-bottom: 2rem;">
 
 ---
 
