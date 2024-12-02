@@ -10,7 +10,7 @@
 
 This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) project for generating a skeleton Python-based Advent of Code toolkit. Ready for you to fill out and solve the puzzles each year, in Python. You bring the brains, I'll bring the brawn-y templates. Features included:
 
-- Performance measuring CLI, for executing your daily solutions in style; with a few options to make sharing easy.
+- Performance measuring CLI, for executing your daily solutions in style.
 - Delightful [rich](https://github.com/Textualize/rich)-based colour highlighting.
 - [uv](https://docs.astral.sh/uv/) for dependency management.
 - Pre-commit hooks with [pre-commit](https://pre-commit.com/).
