@@ -10,11 +10,11 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 bake-and-test-deploy: ## For quick publishing to cookiecutter-uv-example to test GH Actions
 	@rm -rf cookiecutter-uv-example || true
 	@uv run cookiecutter --no-input . --overwrite-if-exists \
-		author="Florian Maas" \
-		email="fpgmaas@gmail.com" \
-		github_author_handle=fpgmaas \
-		project_name=cookiecutter-uv-example \
-		project_slug=cookiecutter_uv_example
+		author="Lee Skillen" \
+		email="lskillen@gmail.com" \
+		github_author_handle=lskillen \
+		project_name=cookiecutter-py-aoc2024 \
+		project_slug=cookiecutter_py_aoc2024
 	@cd cookiecutter-uv-example; uv sync && \
 		git init -b main && \
 		git add . && \
@@ -24,7 +24,7 @@ bake-and-test-deploy: ## For quick publishing to cookiecutter-uv-example to test
 		uv run pre-commit run -a || true && \
 		git add . && \
 		git commit -m "init commit" && \
-		git remote add origin git@github.com:fpgmaas/cookiecutter-uv-example.git && \
+		git remote add origin git@github.com:lskillen/cookiecutter-py-aoc2024.git && \
 		git push -f origin main
 
 
@@ -47,7 +47,7 @@ check: ## Run code quality tools.
 .PHONY: test
 test: ## Test the code with pytest.
 	@echo "🚀 Testing code: Running pytest"
-	@uv run python -m pytest --cov --cov-config=pyproject.toml --cov-report=xml tests
+	@uv run python -m pytest tests
 
 .PHONY: build
 build: clean-build ## Build wheel file
@@ -68,14 +68,6 @@ publish: ## Publish a release to PyPI.
 
 .PHONY: build-and-publish
 build-and-publish: build publish ## Build and publish.
-
-.PHONY: docs-test
-docs-test: ## Test if documentation can be built without warnings or errors
-	@uv run mkdocs build -s
-
-.PHONY: docs
-docs: ## Build and serve the documentation
-	@uv run mkdocs serve
 
 .PHONY: help
 help:

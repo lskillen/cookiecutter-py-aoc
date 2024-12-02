@@ -1,10 +1,10 @@
 [project]
-name = "cookiecutter-uv"
+name = "cookiecutter-py-aoc"
 version = "0.0.1"
-description = "A python cookiecutter application to create a new python project that uses uv to manage its dependencies."
-authors = [{ name = "Florian Maas", email = "fpgmaas@gmail.com" }]
+description = "A modern cookiecutter template for Advent of Code Python projects, using uv/ruff/mypy tooling."
+authors = [{ name = "lee Skillen", email = "lskillen@users.noreply.github.com" }]
 readme = "README.md"
-keywords = ['cookiecutter', 'template', 'uv']
+keywords = ["cookiecutter", "template", "adventofcode", "python", "py", "aoc"]
 requires-python = ">=3.9,<4.0"
 dependencies = [
   "cookiecutter>=2.1.1"
@@ -26,23 +26,18 @@ classifiers = [
 
 
 [project.urls]
-Repository = "https://github.com/fpgmaas/cookiecutter-uv"
-Documentation = "https://fpgmaas.github.io/cookiecutter-uv/"
-Homepage = "https://fpgmaas.github.io/cookiecutter-uv/"
+Repository = "https://github.com/lskillen/cookiecutter-py-aoc/"
+Documentation = "https://lskillen.github.io/cookiecutter-py-aoc/"
+Homepage = "https://lskillen.github.io/cookiecutter-py-aoc/"
 
 [tool.uv]
 dev-dependencies = [
     "pytest>=7.2.0",
     "pre-commit>=2.20.0",
     "pytest-cookies>=0.6.1",
-    "tox-uv>=1.11.3",
     "deptry>=0.20.0",
     "mypy>=0.991",
-    "pytest-cov>=4.0.0",
     "ruff>=0.6.9",
-    "mkdocs>=1.4.2",
-    "mkdocs-material>=8.5.10",
-    "mkdocstrings[python]>=0.19.0",
 ]
 
 [build-system]
@@ -50,23 +45,16 @@ requires = ["setuptools >= 61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["cookiecutter_uv"]
+packages = ["cookiecutter_py_aoc"]
 
 [tool.setuptools.package-data]
-"cookiecutter_uv" = ["*"]
+"cookiecutter_py_aoc" = ["*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
-[tool.coverage.report]
-skip_empty = true
-
-[tool.coverage.run]
-branch = true
-source = ["cookiecutter_uv"]
-
 [tool.mypy]
-files = ['cookiecutter_uv']
+files = ["cookiecutter_py_aoc"]
 disallow_untyped_defs = true
 disallow_any_unimported = true
 no_implicit_optional = true
