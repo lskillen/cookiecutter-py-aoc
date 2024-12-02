@@ -8,13 +8,13 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 
 .PHONY: bake-and-test-deploy
 bake-and-test-deploy: ## For quick publishing to cookiecutter-uv-example to test GH Actions
-	@rm -rf cookiecutter-uv-example || true
+	@rm -rf cookiecutter-py-aoc-example || true
 	@uv run cookiecutter --no-input . --overwrite-if-exists \
 		author="Lee Skillen" \
 		email="lskillen@users.noreply.github.com" \
 		github_author_handle=lskillen \
-		project_name=cookiecutter-py-aoc2024 \
-		project_slug=cookiecutter_py_aoc2024
+		project_name=cookiecutter-py-aoc-example \
+		project_slug=cookiecutter_py_aoc_example
 	@cd cookiecutter-uv-example; uv sync && \
 		git init -b main && \
 		git add . && \
@@ -24,7 +24,7 @@ bake-and-test-deploy: ## For quick publishing to cookiecutter-uv-example to test
 		uv run pre-commit run -a || true && \
 		git add . && \
 		git commit -m "init commit" && \
-		git remote add origin git@github.com:lskillen/cookiecutter-py-aoc2024.git && \
+		git remote add origin git@github.com:lskillen/cookiecutter-py-aoc-example.git && \
 		git push -f origin main
 
 
