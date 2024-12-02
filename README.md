@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="600" src="https://raw.githubusercontent.com/lskillen/cookiecutter-py-aoc/static/images/cookiecutter_py_aoc_logo.png">
+  <img width="1024" src="https://github.com/lskillen/cookiecutter-py-aoc/blob/main/static/images/cookiecutter_py_aoc_logo.png?raw=true">
 </p style = "margin-bottom: 2rem;">
 
 ---
@@ -24,7 +24,7 @@ This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) pr
 Example of the CLI in action:
 
 <p align="center">
-  <img width="600" src="https://raw.githubusercontent.com/lskillen/cookiecutter-py-aoc/static/images/aoc_runner.png">
+  <img width="610" src="https://github.com/lskillen/cookiecutter-py-aoc/blob/main/static/images/aoc_runner.png?raw=true">
 </p style = "margin-bottom: 2rem;">
 
 ---
