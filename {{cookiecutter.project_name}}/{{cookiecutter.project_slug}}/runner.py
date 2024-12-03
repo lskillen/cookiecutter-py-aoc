@@ -73,11 +73,12 @@ def run() -> None:
     parser = generate_parser()
     args = parser.parse_args(sys.argv[1:])
 
-    if args.test:
-        pytest.main([])
-        return
-
     days = [str(s).zfill(2) for s in (range(1, 26) if args.days == "all" else args.days.split(","))]
+
+    if args.test:
+        # Execute pytest, but only with the days specified
+        pytest.main([f"{{cookiecutter.project_slug}}/{day}.py" for day in days])
+        return
 
     # Import all modules and read all inputs, upfront
     modules = {}
