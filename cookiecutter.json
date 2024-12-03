@@ -1,11 +1,11 @@
 {
+    "year": "{% now 'utc', '%Y' %}",
     "author": "Your Name",
     "email": "you@example.com",
     "author_github_handle": "your-handle",
-    "project_name": "aoc{% now 'utc', '%Y' %}",
+    "project_name": "aoc{{cookiecutter.year}}",
     "project_slug": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_')}}",
-    "project_description": "Advent of Code: {% now 'utc', '%Y' %}",
-    "year": "{% now 'utc', '%Y' %}",
+    "project_description": "Advent of Code: {{cookiecutter.year}}",
     "dockerfile": ["y", "n"],
     "devcontainer": ["y", "n"],
     "open_source_license": [
@@ -17,7 +17,7 @@
         "Not open source"
     ],
     "__prompts__": {
-        "dockerfile": "Answer 'y' to setup a containerised environment (recommended)",
-        "devcontainer": "Answer 'y' to setup a devcontainer for VSCode (recommended)"
+        "dockerfile": "Answer 'y' to setup a containerised environment (default/recommended)",
+        "devcontainer": "Answer 'y' to setup a devcontainer for VSCode (default/recommended)"
     }
 }
