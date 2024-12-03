@@ -15,6 +15,7 @@ def read_data(data: list[str] | None = None) -> tuple[list[int], list[int]]:
 
 
 def solve(data: list[str] | None = None) -> tuple[int, int]:
+    data = read_data(data=data)  # noqa: F841 (delete this)
     p1, p2 = 0, 0
     return p1, p2
 

@@ -110,7 +110,7 @@ def run() -> None:
             str(maybe_redact(p1, args.redact)),
             str(maybe_redact(p2, args.redact)),
             format_cpu(cpu),
-            str(day_seconds).ljust(8, "0"),
+            f"{day_seconds:.6f}".ljust(8, "0"),
             yes_no(day_seconds < 1),
         )
 
