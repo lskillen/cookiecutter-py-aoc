@@ -26,7 +26,9 @@ This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) pr
 Example of the CLI in action:
 
 <p align="center">
-  <img width="610" src="https://github.com/lskillen/cookiecutter-py-aoc/blob/main/static/images/aoc_runner.png?raw=true">
+
+![aoc_runner](https://github.com/user-attachments/assets/1850156d-3970-4cd9-b213-29d0de8cf32c)
+
 </p style = "margin-bottom: 2rem;">
 
 ---
