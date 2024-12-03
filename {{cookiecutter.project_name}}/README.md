@@ -20,15 +20,21 @@ Leave the rest (we'll initialize in the next step).
 
 ### 2. Initialize the Repository
 
+You can *either* execute the `setup.sh` in the root directory (note: don't just blindly trust script files, go and have a look at it first; it's the same instructions from this README.md, but just in a single script).
+
+Or, follow the rest of the instructions 2 through 5.
+
 Then, run the following commands:
 
 ```bash
 git init -b main
 git add .
-git commit -m "init commit"
+git commit -m "init: {{cookiecutter.project_description}}"
 git remote add origin git@github.com:{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}.git
-git push -u origin main
+git push -u origin main --force
 ```
+
+Note: Only pass `--force` the first time you're initializing; not *every* time!
 
 Note: This assumes you're authenticating via `ssh` and you're [already setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
@@ -61,12 +67,10 @@ uv run pre-commit run -a
 Lastly, commit the changes made by the two steps above to your repository.
 
 ```bash
-git add .
-git commit -m 'Fix formatting issues'
-git push origin main --force
+git add -u
+git commit -m 'fix: formatting'
+git push origin main
 ```
-
-Note: Only pass `--force` the first time you're initializing; not *every* time!
 
 You are now ready to solving Advent of Code, in style, with extra swagger!
 
