@@ -1,4 +1,5 @@
 """Advent of Code: {{cookiecutter.year}} - Utilities."""
+from __future__ import annotations
 
 import pathlib
 

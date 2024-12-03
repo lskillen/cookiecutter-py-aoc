@@ -1,4 +1,5 @@
 """Advent of Code: {{cookiecutter.year}} - Day #DAY."""
+from __future__ import annotations
 
 from . import utils
 
