@@ -58,3 +58,7 @@ repository.
 It's also _heavily_ based on [Florian Maas](https://github.com/fpgmaas)' awesome [cookiecutter-uv](https://github.com/fpgmaas/cookiecutter-uv) repository.
 
 Thank you, to both, so that we may AoC in joy!
+
+## Author
+
+Created by [Lee Skillen](https://github.com/lskillen); I build other things, including [Cloudsmith](https://cloudsmith.com).
