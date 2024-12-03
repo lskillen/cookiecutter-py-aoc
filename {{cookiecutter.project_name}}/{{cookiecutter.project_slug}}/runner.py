@@ -114,7 +114,7 @@ def run() -> None:
             yes_no(day_seconds < 1),
         )
 
-    table.add_row("total", "", "", "", str(round(total_seconds, 6)).ljust(8, "0"), yes_no(total_seconds < 1))
+    table.add_row("total", "", "", "", f"{total_seconds:.6f}".ljust(8, "0"), yes_no(total_seconds < 1))
 
     console = Console()
     console.print(table)
