@@ -33,7 +33,7 @@ Example of the CLI in action:
 
 Note: It's recommend to use a combination of [Docker Desktop](https://www.docker.com/products/docker-desktop/) plus [VSCode](https://code.visualstudio.com/) for the best experience, because with a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers), you can do everything from within VSCode itself.
 
-On your local machine, navigate to the directory in which you want to create a project directory, and run the following command with [uv](https://docs.astral.sh/uv/getting-started/installation/) installed:
+On your local machine, navigate to the directory in which you want to create a project directory, and run the following command with [uv installed](https://docs.astral.sh/uv/getting-started/installation/):
 
 ```bash
 uvx cookiecutter https://github.com/lskillen/cookiecutter-py-aoc.git
