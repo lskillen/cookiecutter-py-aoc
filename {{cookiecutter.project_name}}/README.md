@@ -20,7 +20,7 @@ Leave the rest (we'll initialize in the next step).
 
 ### 2. Initialize the Repository
 
-You can *either* execute the `setup.sh` in the root directory (note: don't just blindly trust script files, go and have a look at it first; it's the same instructions from this README.md, but just in a single script).
+You can _either_ execute the `setup.sh` in the root directory (note: don't just blindly trust script files, go and have a look at it first; it's the same instructions from this README.md, but just in a single script).
 
 Or, follow the rest of the instructions 2 through 5.
 
@@ -34,7 +34,7 @@ git remote add origin git@github.com:{{cookiecutter.author_github_handle}}/{{coo
 git push -u origin main --force
 ```
 
-Note: Only pass `--force` the first time you're initializing; not *every* time!
+Note: Only pass `--force` the first time you're initializing; not _every_ time!
 
 Note: This assumes you're authenticating via `ssh` and you're [already setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
@@ -95,7 +95,7 @@ The CLI will:
 - Provide the answers you generated, either example or real, for each day.
 - Provide CPU and timing information for each day.
 - Tell you whether it was a "golden" solution; i.e., took less than one second.
-- Tell you whether *all* together are "golden"; i.e., *all* took less than one second.
+- Tell you whether _all_ together are "golden"; i.e., _all_ took less than one second.
 
 If you're in the devcontainer, just run the following:
 
