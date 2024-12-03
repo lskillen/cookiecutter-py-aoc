@@ -99,7 +99,7 @@ def run() -> None:
     for day, module in modules.items():
         with timer() as t_day:
             p1, p2 = module.solve(data=inputs[day] if not args.example else None)
-        if p1 == 0 and p2 == 0:
+        if p1 == 0 and p2 == 0 and args.days == "all":
             # Ignore uncompleted days, unless explicitly mentioned
             continue
         t, cpu = t_day()
