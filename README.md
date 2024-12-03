@@ -8,7 +8,7 @@
 [![Supported Python versions](https://img.shields.io/badge/python-3.9_%7C_3.10_%7C_3.11_%7C_3.12_%7C_3.13-blue?labelColor=grey&color=blue)](https://github.com/lskillen/cookiecutter-py-aoc/blob/main/pyproject.toml)
 [![License](https://img.shields.io/github/license/lskillen/cookiecutter-py-aoc)](https://img.shields.io/github/license/lskillen/cookiecutter-py-aoc)
 
-This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) project for generating a skeleton Python-based Advent of Code toolkit. Ready for you to fill out and solve the puzzles each year, in Python. You bring the brains, I'll bring the brawn-y templates. Features included:
+This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) project for generating a skeleton Python-based [Advent of Code](https://adventofcode.com) toolkit. Ready for you to fill out and solve the puzzles each year, in Python. You bring the brains, I'll bring the brawn-y templates. Features included:
 
 - Performance measuring CLI, for executing your daily solutions in style.
 - Delightful [rich](https://github.com/Textualize/rich)-based colour highlighting.
