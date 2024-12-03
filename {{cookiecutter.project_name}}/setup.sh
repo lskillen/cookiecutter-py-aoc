@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euxo pipefail
+set -eux
 git init -b main
 git add .
 git commit -m "init: {{cookiecutter.project_description}}"

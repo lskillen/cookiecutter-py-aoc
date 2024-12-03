@@ -16,13 +16,19 @@ First, [create a repository on GitHub](https://github.com/new).
 - Description: "{{cookiecutter.project_description}}"
 - Visibility: Up to you. :)
 
-Leave the rest (we'll initialize in the next step).
+Leave the rest (we'll initialize next).
+
+Next, you can _either_ execute the following in the root directory:
+
+```bash
+bash setup.sh
+```
+
+... or just follow the rest of this README to do it manually. :)
+
+Note: *Don't* just blindly trust script files, go and have a look at it first; it's the same instructions from this README.md, but just in a single script).
 
 ### 2. Initialize the Repository
-
-You can _either_ execute the `setup.sh` in the root directory (note: don't just blindly trust script files, go and have a look at it first; it's the same instructions from this README.md, but just in a single script).
-
-Or, follow the rest of the instructions 2 through 5.
 
 Then, run the following commands:
 
