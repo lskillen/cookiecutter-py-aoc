@@ -1,8 +1,7 @@
 {
     "year": "{% now 'utc', '%Y' %}",
-    "author": "Your Name",
-    "email": "you@example.com",
     "author_github_handle": "your-handle",
+    "author": "{{cookiecutter.author_github_handle}}",
     "project_name": "aoc{{cookiecutter.year}}",
     "project_slug": "{{cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_')}}",
     "project_description": "Advent of Code: {{cookiecutter.year}}",
@@ -17,7 +16,13 @@
         "Not open source"
     ],
     "__prompts__": {
+        "year": "Year of Advent of Code you're tackling",
+        "author_github_handle": "Your GitHub handle/account (important!)",
+        "author": "Your full name (optional)",
+        "project_name": "Your GitHub project/repository name (important!)",
+        "project_description": "A nice description for the project/repository (optional)",
         "dockerfile": "Answer 'y' to setup a containerised environment (default/recommended)",
-        "devcontainer": "Answer 'y' to setup a devcontainer for VSCode (default/recommended)"
+        "devcontainer": "Answer 'y' to setup a devcontainer for VSCode (default/recommended)",
+        "open_source_license": "The project/repository license (optional)"
     }
 }

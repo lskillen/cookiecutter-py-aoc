@@ -2,7 +2,7 @@
 name = "cookiecutter-py-aoc"
 version = "0.0.1"
 description = "A modern cookiecutter template for Advent of Code Python projects, using uv/ruff/mypy tooling."
-authors = [{ name = "lee Skillen", email = "lskillen@users.noreply.github.com" }]
+authors = [{ name = "Lee Skillen" }]
 readme = "README.md"
 keywords = ["cookiecutter", "template", "adventofcode", "python", "py", "aoc"]
 requires-python = ">=3.9,<4.0"
