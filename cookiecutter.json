@@ -17,9 +17,9 @@
     ],
     "__prompts__": {
         "year": "Year of Advent of Code you're tackling",
-        "author_github_handle": "Your GitHub handle/account (important!)",
+        "author_github_handle": "Your GitHub handle/account (important: this *must* be you)",
         "author": "Your full name (optional)",
-        "project_name": "Your GitHub project/repository name (important!)",
+        "project_name": "Your GitHub project/repository name (important: make sure this exists first!)",
         "project_slug": "The code module name (default is usually fine)",
         "project_description": "A nice description for the project/repository (optional)",
         "dockerfile": "Setup a containerised environment? (default/recommended)",
