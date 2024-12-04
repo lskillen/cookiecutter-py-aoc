@@ -186,7 +186,7 @@ dependencies = [
 ]
 
 [package.dev-dependencies]
-dev = [
+dev-dependencies = [
     { name = "deptry" },
     { name = "mypy" },
     { name = "pre-commit" },
@@ -199,7 +199,7 @@ dev = [
 requires-dist = [{ name = "cookiecutter", specifier = ">=2.1.1" }]
 
 [package.metadata.requires-dev]
-dev = [
+dev-dependencies = [
     { name = "deptry", specifier = ">=0.20.0" },
     { name = "mypy", specifier = ">=0.991" },
     { name = "pre-commit", specifier = ">=2.20.0" },
