@@ -4,16 +4,14 @@ from __future__ import annotations
 from . import utils
 
 
-def example() -> str:
-    """Get example input."""
-    return """
+EXAMPLE = """
 EXAMPLE
-"""
+""".strip()
 
 
 def read_data(data: list[str] | None = None) -> list[str]:
     """Read the data."""
-    return data or utils.read_example(example())
+    return data or utils.read_example(EXAMPLE)
 
 
 def solve(data: list[str] | None = None) -> tuple[int, int]:
