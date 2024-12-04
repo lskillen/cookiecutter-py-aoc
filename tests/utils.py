@@ -1,13 +1,15 @@
 from __future__ import annotations
 
 import os
+from collections.abc import Generator
 from contextlib import contextmanager
 from pathlib import Path
 
-import yaml
+import yaml  # type: ignore[import-untyped]
 
 
-def is_valid_yaml(path: str | Path):
+def is_valid_yaml(path: str | Path) -> bool:
+    """Check if a file is valid YAML."""
     path = Path(path)
 
     if not path.is_file():
@@ -28,7 +30,8 @@ def is_valid_yaml(path: str | Path):
 
 
 @contextmanager
-def run_within_dir(path: str):
+def run_within_dir(path: str) -> Generator:
+    """Execute within a directory while in the context."""
     oldpwd = os.getcwd()
     os.chdir(path)
     try:
@@ -38,5 +41,6 @@ def run_within_dir(path: str):
 
 
 def file_contains_text(file: str, text: str) -> bool:
+    """Check if a file has text-based contents."""
     with open(file) as f:
         return f.read().find(text) != -1

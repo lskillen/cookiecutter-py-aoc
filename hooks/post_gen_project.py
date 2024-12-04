@@ -15,7 +15,7 @@ def remove_dir(filepath: str) -> None:
     shutil.rmtree(os.path.join(PROJECT_DIRECTORY, filepath))
 
 
-def run():
+def run() -> None:
     # Generate days (and inputs) from template
     project_slug = "{{cookiecutter.project_slug}}"
     prefix_path = os.path.join(PROJECT_DIRECTORY, project_slug)
