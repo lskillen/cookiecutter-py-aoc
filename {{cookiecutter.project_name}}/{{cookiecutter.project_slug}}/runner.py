@@ -7,7 +7,7 @@ import importlib
 import sys
 import time
 from collections.abc import Generator
-from typing import Any
+from typing import Any, Callable
 
 import psutil
 import pytest
@@ -35,13 +35,13 @@ def generate_parser() -> argparse.ArgumentParser:
 
 
 @contextlib.contextmanager
-def timer() -> Generator:
+def timer() -> Generator[Callable[[], tuple[Any, Any]]]:
     """Capture an inner block's execution time in nanoseconds, and cpu time."""
     # Initialize cpu counters
     cpu = psutil.cpu_times_percent()
     t1 = t2 = time.perf_counter_ns()
 
-    def _timer():
+    def _timer() -> tuple[Any, Any]:
         t = t2 - t1
         return t, cpu
 
@@ -96,7 +96,7 @@ def run() -> None:
     table.add_column("t (seconds)", justify="right", style="blue")
     table.add_column("gold (t<1)", justify="right", style="gold3")
 
-    total_seconds = 0
+    total_seconds = 0.0
     for day, module in modules.items():
         with timer() as t_day:
             p1, p2 = module.solve(data=inputs[day] if not args.example else None)

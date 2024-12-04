@@ -12,13 +12,13 @@ EXAMPLE
 
 
 def read_data(data: list[str] | None = None) -> list[str]:
-    """Read the something."""
+    """Read the data."""
     return data or utils.read_example(example())
 
 
 def solve(data: list[str] | None = None) -> tuple[int, int]:
     """
-    Solve the something.
+    Solve the problem.
 
     You can write docstests here too:
 
