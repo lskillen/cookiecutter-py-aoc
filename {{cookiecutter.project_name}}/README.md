@@ -108,6 +108,7 @@ The CLI will:
 - Run your solution for all days or the days you specify (comma-separated list).
 - Provide the answers you generated, either example or real, for each day.
 - Provide CPU and timing information for each day.
+- Provide Source Lines of Code (SLOC) and the number of characters for each day.
 - Tell you whether it was a "golden" solution, i.e., it took less than one second.
 - Tell you whether _all_ together are "golden"; i.e., _all_ took less than one second.
 
