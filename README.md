@@ -35,7 +35,7 @@ Example of the CLI in action:
 
 ## Quickstart
 
-Note: It's recommend to use a combination of [Docker Desktop](https://www.docker.com/products/docker-desktop/) plus [VSCode](https://code.visualstudio.com/) for the best experience, because with a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers), you can do everything from within VSCode itself.
+Note: For the best experience, it's recommended to use a combination of [Docker Desktop](https://www.docker.com/products/docker-desktop/) plus [VSCode](https://code.visualstudio.com/) because with a [devcontainer](https://code.visualstudio.com/docs/devcontainers/containers), you can do everything from within VSCode itself.
 
 On your local machine, navigate to the directory in which you want to create a project directory, and run the following command with [uv installed](https://docs.astral.sh/uv/getting-started/installation/):
 
@@ -50,7 +50,9 @@ pip install cookiecutter
 cookiecutter https://github.com/lskillen/cookiecutter-py-aoc.git
 ```
 
-Follow the prompts to configure your project. Once completed, a new directory containing your project will be created. Then navigate into your newly created project directory and follow the instructions in the `README.md` to complete the setup of your project. Happy Advent of Coding!
+Follow the prompts to configure your project. Once completed, a new directory containing your project will be created. Then, navigate your newly created project directory and follow the `README.md` instructions to complete your project setup. Happy Advent of Coding!
+
+P.S. If you like what you use or use the project, send me some love with a star on GitHub (but it's optional!) ⭐
 
 ## Acknowledgements
 
