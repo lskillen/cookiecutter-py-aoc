@@ -23,7 +23,7 @@ Homepage = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutt
 Repository = "https://github.com/{{cookiecutter.author_github_handle}}/{{cookiecutter.project_name}}"
 Documentation = "https://{{cookiecutter.author_github_handle}}.github.io/{{cookiecutter.project_name}}/"
 
-[dependency-groups]
+[tool.uv]
 dev-dependencies = [
     "pytest>=7.2.0",
     "pre-commit>=2.20.0",
