@@ -1,6 +1,6 @@
 <p align="center">
 
-![cookiecutter_py_aoc_logo](https://github.com/user-attachments/assets/18a6942c-7c4f-4ac6-8a24-e740247bc7ca)
+![cookiecutter_py_aoc_logo](https://github.com/user-attachments/assets/f9922402-7a6b-44de-8281-e94e97434f80)
 
 </p style = "margin-bottom: 2rem;">
 
