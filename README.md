@@ -27,7 +27,7 @@ Example of the CLI in action:
 
 <p align="center">
 
-![aoc_runner](https://github.com/user-attachments/assets/1850156d-3970-4cd9-b213-29d0de8cf32c)
+![AoC Runner - In Action](https://github.com/user-attachments/assets/e6a5185d-e7ba-4fc0-b5e0-bbcacfd6b75f)
 
 </p style = "margin-bottom: 2rem;">
 
