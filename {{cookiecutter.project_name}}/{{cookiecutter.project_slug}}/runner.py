@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import contextlib
 import importlib
+import inspect
 import sys
 import time
 from collections.abc import Generator
@@ -66,7 +67,7 @@ def format_cpu(cpu: Any) -> str:
 
 def maybe_redact(value: str, redact: bool) -> str:
     """Maybe redact a value if asked to."""
-    return "[dim grey]<redacted>[/dim grey]" if redact else value
+    return "[dim grey]<redact>[/dim grey]" if redact else value
 
 
 def run() -> None:
@@ -93,6 +94,7 @@ def run() -> None:
     table.add_column("p1", style="magenta")
     table.add_column("p2", style="green")
     table.add_column("cpu", justify="left", style="red")
+    table.add_column("sloc (chr)", justify="right", style="yellow")
     table.add_column("t (seconds)", justify="right", style="blue")
     table.add_column("gold (t<1)", justify="right", style="gold3")
 
@@ -106,16 +108,20 @@ def run() -> None:
         t, cpu = t_day()
         day_seconds = ns_to_s(t)
         total_seconds += day_seconds
+        source = inspect.getsource(module)
+        sloc = source.count("\n")
+        chars = len(source)
         table.add_row(
             day,
             str(maybe_redact(p1, args.redact)),
             str(maybe_redact(p2, args.redact)),
             format_cpu(cpu),
+            f"{sloc} ({chars})",
             f"{day_seconds:.6f}".ljust(8, "0"),
             yes_no(day_seconds < 1),
         )
 
-    table.add_row("total", "", "", "", f"{total_seconds:.6f}".ljust(8, "0"), yes_no(total_seconds < 1))
+    table.add_row("total", "", "", "", "", f"{total_seconds:.6f}".ljust(8, "0"), yes_no(total_seconds < 1))
 
     console = Console()
     console.print(table)
