@@ -16,7 +16,7 @@ First, [create a repository on GitHub](https://github.com/new).
 - Description: "{{cookiecutter.project_description}}"
 - Visibility: Up to you. :)
 
-Leave the rest, as we'll initialize these automatically next.
+You can leave the rest because we'll initialize these automatically in the next step.
 
 Next, you can _either_ execute the following in the root directory:
 
@@ -26,7 +26,7 @@ bash setup.sh
 
 ... or follow the rest of this README to do it manually. :)
 
-Note: *Don't* blindly trust script files; go and look at it first. These are the exact instructions from this README.md, but in a single script.
+**Note:** *Don't* blindly trust script files; go and look at it first. These are the exact instructions from this `README.md`, but in a single script.
 
 ### 2. Initialize the Repository
 
@@ -40,9 +40,9 @@ git remote add origin git@github.com:{{cookiecutter.author_github_handle}}/{{coo
 git push -u origin main --force
 ```
 
-Note: Only pass `--force` the first time you initialize; not _every_ time!
+**Note:** Only pass `--force` the first time you initialize; not _every_ time!
 
-Note: This assumes you're authenticating via `ssh` and you're [already setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
+**Note:** This assumes you're authenticating via `ssh` and you're [already setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
 ### 3. Set Up Your Development Environment
 
@@ -78,15 +78,23 @@ git commit -m 'fix: formatting'
 git push origin main
 ```
 
-You are now ready to solving Advent of Code, in style, with extra swagger!
+You are now ready to solve Advent of Code in style, with extra swagger!
 
-Tip: If you're using devcontainers, execute `code .` and you're ready. :)
+## Devcontainer
+
+If you're using devcontainers, just execute `code .` from the project directory, and you're _almost_ ready.
+
+When it loads, make sure you hit "Reopen in Container" in VSCode (at the bottom-right):
+
+![VSCode: Reopen in Container](https://github.com/user-attachments/assets/07da7773-8bd3-45b8-9f43-508f88b6c80f)
+
+Yes, you have to do this everytime (but there are some shortcuts, like installing and using the [devcontainer CLI](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli)).
 
 ## Project Structure
 
 Within your project folder, i.e., {{cookiecutter.project_name}}/{{cookiecutter.project_slug}}, you've got a python file for each day you need to solve, such as `01.py`, as well as a corresponding input file, such as `input/01.txt`.
 
-You can update the code to solve the puzzle, and put your input in the text file as per Advent of Code (feel free to skip checking it in if you want; a nice way to do that is to add `{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/input/*` to your `.gitignore` file).
+You can update the code to solve the puzzle and put your input in the text file as per Advent of Code (feel free to skip checking it in if you want; a nice way to do that is to add `{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/input/*` to your `.gitignore` file).
 
 You've also got the following:
 
@@ -113,6 +121,26 @@ Or, if you're outside of the devcontainer:
 
 ```
 uv run python -m {{cookiecutter.project_name}}
+```
+
+### Redacting Output
+
+If you'd like to redact the output (e.g., for sharing just timings elsewhere), execute the CLI with `--redact`.
+
+## Executing Tests
+
+If you'd like to execute your tests, you can pass `--test` to the CLI or execute `pytest`.
+
+If you're in the devcontainer, just run the following:
+
+```
+pytest
+```
+
+Or, if you're outside of the devcontainer:
+
+```
+uv run pytest
 ```
 
 ## Attribution / Where Can I Get My Own?
