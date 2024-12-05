@@ -5,6 +5,7 @@ import argparse
 import contextlib
 import importlib
 import inspect
+import os
 import sys
 import time
 from collections.abc import Generator
@@ -78,7 +79,10 @@ def run() -> None:
 
     if args.test:
         # Execute pytest, but only with the days specified
-        pytest.main([f"{{cookiecutter.project_slug}}/{day}.py" for day in days])
+        pytest.main([
+            f"{{cookiecutter.project_slug}}/{day}.py" for day in days
+            if os.path.exists(f"{{cookiecutter.project_slug}}/{day}.py")
+        ])
         return
 
     # Import all modules and read all inputs, upfront
