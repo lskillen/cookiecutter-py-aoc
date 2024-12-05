@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import contextlib
 import importlib
 import inspect
@@ -71,6 +72,11 @@ def maybe_redact(value: str, redact: bool) -> str:
     return "[dim grey]<redact>[/dim grey]" if redact else value
 
 
+def purify_source(source: str) -> str:
+    """Strip comments and other unneeded parts from source code."""
+    return ast.unparse(ast.parse(source))
+
+
 def run() -> None:
     parser = generate_parser()
     args = parser.parse_args(sys.argv[1:])
@@ -112,7 +118,7 @@ def run() -> None:
         t, cpu = t_day()
         day_seconds = ns_to_s(t)
         total_seconds += day_seconds
-        source = inspect.getsource(module)
+        source = purify_source(inspect.getsource(module))
         sloc = source.count("\n")
         chars = len(source)
         table.add_row(
