@@ -144,6 +144,25 @@ Or, if you're outside of the devcontainer:
 uv run pytest
 ```
 
+## My Inputs Texts Aren't Committed; Why!?
+
+Yes, by default, if your chosen license is OSS, the `{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/input` directory is NOT checked into git.
+
+This is due to [Eric/AoC requesting in the FAQ](https://adventofcode.com/2024/about) that:
+
+> **Can I copy/redistribute part of Advent of Code?**
+> 
+> Please don't. Advent of Code is free to use, not free to copy. If you're posting a code repository somewhere, _please don't include parts of Advent of Code like the puzzle text or **your inputs**_.
+
+If you chose the wrong license (i.e., OSS, but your repo is private), you can fix this by forcing the files to be added to git:
+
+```bash
+git add -f {{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/input
+git commit -m "add: input files"
+```
+
+But, please don't break the community rules, as above. :)
+
 ## Attribution / Where Can I Get My Own?
 
 For everyone else who isn't @{{cookiecutter.author_github_handle}}: This repository was created using [lskillen/cookiecutter-py-aoc](https://github.com/lskillen/cookiecutter-py-aoc), for a rockin' around the tree good time, developing Advent of Code solutions using Python+uv+ruff+mypy+pytest. Go there and find out how to get your own; yes, that means _you_!
