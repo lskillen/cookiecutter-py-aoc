@@ -151,7 +151,7 @@ Yes, by default, if your chosen license is OSS, the `{{cookiecutter.project_name
 This is due to [Eric/AoC requesting in the FAQ](https://adventofcode.com/2024/about) that:
 
 > **Can I copy/redistribute part of Advent of Code?**
-> 
+>
 > Please don't. Advent of Code is free to use, not free to copy. If you're posting a code repository somewhere, _please don't include parts of Advent of Code like the puzzle text or **your inputs**_.
 
 If you chose the wrong license (i.e., OSS, but your repo is private), you can fix this by forcing the files to be added to git:

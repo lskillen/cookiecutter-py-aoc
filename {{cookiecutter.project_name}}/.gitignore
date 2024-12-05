@@ -162,3 +162,8 @@ cython_debug/
 #.idea/
 
 setup.sh
+
+{% if cookiecutter.open_source_license != "None" -%}
+# Because this is an OSS project, let's ignore the input texts so we don't commit them
+{{cookiecutter.project_name}}/{{cookiecutter.project_slug}}/input/
+{% endif %}

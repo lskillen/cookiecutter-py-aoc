@@ -14,7 +14,8 @@ bake-test:
 		author="Lee Skillen" \
 		github_author_handle=lskillen \
 		project_name=cookiecutter-py-aoc-example \
-		project_slug=cookiecutter_py_aoc_example
+		project_slug=cookiecutter_py_aoc_example \
+		open_source_license="MIT license"
 
 
 .PHONY: install

@@ -13,7 +13,7 @@
         "ISC license",
         "Apache Software License 2.0",
         "GNU General Public License v3",
-        "Not open source"
+        "None"
     ],
     "__prompts__": {
         "year": "Year of Advent of Code you're tackling",
@@ -24,6 +24,6 @@
         "project_description": "A nice description for the project/repository (optional)",
         "dockerfile": "Setup a containerised environment? (default/recommended)",
         "devcontainer": "Setup a devcontainer for VSCode? (default/recommended)",
-        "open_source_license": "The project/repository license (optional)"
+        "open_source_license": "The project/repository license (optional: if OSS, inputs won't be checked in)"
     }
 }
