@@ -242,6 +242,8 @@ def run() -> None:  # noqa: C901
             """
             ).splitlines()
         ),
+        title_style="on navy_blue",
+        caption_style="on navy_blue",
         row_styles=["", "bold"],
     )
     table.add_column("day", justify="right", style="bold cyan", no_wrap=True)
@@ -324,6 +326,7 @@ def run() -> None:  # noqa: C901
 
     console.print()
     console.print(table)
+    console.print()
 
 
 if __name__ == "__main__":  # pragma: no cover
