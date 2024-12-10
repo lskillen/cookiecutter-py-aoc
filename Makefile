@@ -8,14 +8,16 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 
 .PHONY: bake-test
 bake-test:
-	@rm -rf cookiecutter-py-aoc-example || true
-	@uv run cookiecutter --no-input . --overwrite-if-exists \
+	@rm -rf ../cookiecutter-py-aoc-example || true
+	@VIRTUAL_ENV= uv run cookiecutter --no-input . --overwrite-if-exists \
 		year=2023 \
 		author="Lee Skillen" \
 		github_author_handle=lskillen \
 		project_name=cookiecutter-py-aoc-example \
 		project_slug=cookiecutter_py_aoc_example \
 		open_source_license="MIT license"
+	@mv cookiecutter-py-aoc-example ../
+	@cd ../cookiecutter-py-aoc-example && git init -b main
 
 
 .PHONY: install

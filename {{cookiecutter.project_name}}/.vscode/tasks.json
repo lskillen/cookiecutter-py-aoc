@@ -8,7 +8,7 @@
             "args": [
                 "python",
                 "-m",
-                "{{cookiecutter.project_name}}",
+                "{{cookiecutter.project_slug}}",
                 "-q",
                 "-s",
                 "-d",
@@ -29,7 +29,7 @@
             "args": [
                 "python",
                 "-m",
-                "{{cookiecutter.project_name}}",
+                "{{cookiecutter.project_slug}}",
                 "-q",
                 "-s",
                 "-e",
@@ -48,7 +48,7 @@
             "label": "Profile w/ Austin (Whole App)",
             "type": "austin",
             "command": ["uv", "run"],
-            "args": ["python", "-m", "{{cookiecutter.project_name}}", "-q", "-s"],
+            "args": ["python", "-m", "{{cookiecutter.project_slug}}", "-q", "-s"],
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -62,7 +62,7 @@
             "label": "Profile w/ Austin (Whole App Examples)",
             "type": "austin",
             "command": ["uv", "run"],
-            "args": ["python", "-m", "{{cookiecutter.project_name}}", "-q", "-s", "-e"],
+            "args": ["python", "-m", "{{cookiecutter.project_slug}}", "-q", "-s", "-e"],
             "group": {
                 "kind": "test",
                 "isDefault": true

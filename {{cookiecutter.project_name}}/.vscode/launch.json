@@ -5,14 +5,14 @@
             "name": "Python Debugger: Module (Current File/Day)",
             "type": "debugpy",
             "request": "launch",
-            "module": "{{cookiecutter.project_name}}",
+            "module": "{{cookiecutter.project_slug}}",
             "args": ["-d", "${file}"]
         },
         {
             "name": "Python Debugger: Module (Whole App)",
             "type": "debugpy",
             "request": "launch",
-            "module": "{{cookiecutter.project_name}}",
+            "module": "{{cookiecutter.project_slug}}",
             "args": []
         }
     ]
