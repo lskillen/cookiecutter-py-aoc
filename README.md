@@ -20,6 +20,7 @@ This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) pr
 - Formatting with [ruff](https://github.com/charliermarsh/ruff) and [prettier](https://prettier.io/).
 - Type checking with [mypy](https://mypy.readthedocs.io/en/stable/).
 - Testing with [pytest](https://docs.pytest.org/en/7.1.x/).
+- Profiling with [Austin](https://github.com/P403n1x87/austin) and the [Austin VSCode Extension](https://github.com/P403n1x87/austin-vscode).
 - Containerization with [Docker](https://www.docker.com/).
 - Development environment with [VSCode devcontainers](https://code.visualstudio.com/docs/devcontainers/containers).
 - Made with lurve. :heart:
@@ -28,7 +29,15 @@ Example of the CLI in action:
 
 <p align="center">
 
-![AoC Runner - In Action](https://github.com/user-attachments/assets/e6a5185d-e7ba-4fc0-b5e0-bbcacfd6b75f)
+![AoC Runner - In Action](https://github.com/user-attachments/assets/2457f365-497e-4da9-aa01-58f851f4a579)
+
+</p style = "margin-bottom: 2rem;">
+
+Example of the Austin-based profiling in action:
+
+<p align="center">
+
+![Austin Profiling - In Action](https://github.com/user-attachments/assets/33ab8a78-4475-44b6-9804-61b5ac7faf8b)
 
 </p style = "margin-bottom: 2rem;">
 
