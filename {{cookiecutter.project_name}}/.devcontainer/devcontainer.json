@@ -16,7 +16,7 @@
                 "p403n1x87.austin-vscode"
             ],
             "settings": {
-                "python.testing.pytestArgs": [],
+                "python.testing.pytestArgs": ["."],
                 "python.testing.unittestEnabled": false,
                 "python.testing.pytestEnabled": true,
                 "python.defaultInterpreterPath": "/workspaces/{{cookiecutter.project_name}}/.venv/bin/python",
