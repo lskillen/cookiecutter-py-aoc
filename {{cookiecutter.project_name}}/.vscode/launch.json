@@ -9,7 +9,14 @@
             "args": ["-d", "${file}"]
         },
         {
-            "name": "Python Debugger: Module (Whole App)",
+            "name": "Python Debugger: Module (Current File/Day Examples)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "{{cookiecutter.project_slug}}",
+            "args": ["-d", "${file}", "-e"]
+        },
+        {
+            "name": "Python Debugger: Module (Everything)",
             "type": "debugpy",
             "request": "launch",
             "module": "{{cookiecutter.project_slug}}",

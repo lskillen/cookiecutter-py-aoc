@@ -14,10 +14,7 @@
                 "-d",
                 "${file}"
             ],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
+            "group": "profile",
             "presentation": {
                 "close": true
             }
@@ -36,16 +33,13 @@
                 "-d",
                 "${file}"
             ],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
+            "group": "profile",
             "presentation": {
                 "close": true
             }
         },
         {
-            "label": "Profile w/ Austin (Whole App)",
+            "label": "Profile w/ Austin (Everything)",
             "type": "austin",
             "command": ["uv", "run"],
             "args": ["python", "-m", "{{cookiecutter.project_slug}}", "-q", "-s"],
@@ -59,14 +53,11 @@
             }
         },
         {
-            "label": "Profile w/ Austin (Whole App Examples)",
+            "label": "Profile w/ Austin (Everything Examples)",
             "type": "austin",
             "command": ["uv", "run"],
-            "args": ["python", "-m", "{{cookiecutter.project_slug}}", "-q", "-s", "-e"],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
+            "args": ["python", "-m", "cookiecutter_py_aoc_example", "-q", "-s", "-e"],
+            "group": "profile",
             "problemMatcher": [],
             "presentation": {
                 "close": true
@@ -77,12 +68,55 @@
             "type": "shell",
             "command": "pytest",
             "args": [],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
+            "group": "test",
             "problemMatcher": [],
             "detail": "Run pytest"
+        },
+        {
+            "label": "Run Application (Current File/Day)",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "-m",
+                "{{cookiecutter.project_slug}}",
+                "-d",
+                "${file}"
+            ],
+            "group": "execute",
+            "presentation": {
+                "reveal": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run Application (Current File/Day Examples)",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "-m",
+                "{{cookiecutter.project_slug}}",
+                "-d",
+                "${file}",
+                "-e"
+            ],
+            "group": "execute",
+            "presentation": {
+                "reveal": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run Application (Everything)",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "-m",
+                "{{cookiecutter.project_slug}}",
+            ],
+            "presentation": {
+                "reveal": true,
+                "panel": "shared"
+            }
         }
     ]
 }
