@@ -90,6 +90,14 @@ When it loads, make sure you hit "Reopen in Container" in VSCode (at the bottom-
 
 Yes, you have to do this everytime (but there are some shortcuts, like installing and using the [devcontainer CLI](https://code.visualstudio.com/docs/devcontainers/devcontainer-cli)).
 
+*Note:* After fully loading once, you'll have to reload _again_ to get the profiling tasks to work (using CTRL/CMD+SHIFT+P and selecting "Reload").
+
+## Profiling
+
+To execute the Austin-based profiling, press CTRL/CMD+SHIFT+P, select "Run Tasks," and then select an Austin task to execute.
+
+*Note:* If this is your first time executing VSCode + the `devcontainer`, you'll need to reload it before the Austin tasks will work (using CTRL/CMD+SHIFT+P and selecting "Reload").
+
 ## Project Structure
 
 Within your project folder, i.e., {{cookiecutter.project_name}}/{{cookiecutter.project_slug}}, you've got a python file for each day you need to solve, such as `01.py`, as well as a corresponding input file, such as `input/01.txt`.
