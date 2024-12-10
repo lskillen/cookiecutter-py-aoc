@@ -9,7 +9,7 @@ You can contribute in many ways:
 
 ## Report Bugs
 
-Report bugs at <https://github.com/fpgmaas/cookiecutter-uv/issues
+Report bugs at <https://github.com/lskillen/cookiecutter-py-aoc/issues
 
 If you are reporting a bug, please include:
 
@@ -29,11 +29,11 @@ Anything tagged with "enhancement" and "help wanted" is open to whoever wants to
 
 ## Write Documentation
 
-Cookiecutter PyPackage could always use more documentation, whether as part of the official docs, in docstrings, or even on the web in blog posts, articles, and such.
+`cookiecutter-py-aoc` could always use more documentation, whether as part of the README, in docstrings, or even on the web in blog posts, articles, and such.
 
 ## Submit Feedback
 
-The best way to send feedback is to file an issue at <https://github.com/fpgmaas/cookiecutter-uv/issues.
+The best way to send feedback is to file an issue at <https://github.com/lskillen/cookiecutter-py-aoc/issues.
 
 If you are proposing a new feature:
 
@@ -43,23 +43,23 @@ If you are proposing a new feature:
 
 # Get Started!
 
-Ready to contribute? Here\'s how to set up `cookiecutter-uv` for local development.
+Ready to contribute? Here\'s how to set up `cookiecutter-py-aoc` for local development.
 Please note this documentation assumes you already have `uv` and `git` installed and ready to go.
 
-1. Fork the `cookiecutter-uv` repo on GitHub.
+1. Fork the `cookiecutter-py-aoc` repo on GitHub.
 
 2. Clone your fork locally:
 
 ```bash
 cd <directory_in_which_repo_should_be_created
-git clone git@github.com:YOUR_NAME/cookiecutter-uv.git
+git clone git@github.com:YOUR_NAME/cookiecutter-py-aoc.git
 ```
 
 3. Now we need to install the environment.
    Navigate into the project directory:
 
 ```bash
-cd cookiecutter-uv
+cd cookiecutter-py-aoc
 ```
 
 Then, install and activate the environment with:
@@ -102,13 +102,6 @@ tox
 
 This requires you to have multiple versions of Python installed.
 This step is also triggered in the CI/CD pipeline, so you could also choose to skip this step locally.
-
-10. Reflect your changes in the documentation. Update relevant files in the `docs` directory, and potentially the `README`.
-    You can check the updated documentation with:
-
-```bash
-make docs
-```
 
 11. Commit your changes and push your branch to GitHub:
 

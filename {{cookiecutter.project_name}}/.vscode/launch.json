@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Module (Current File/Day)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "{{cookiecutter.project_name}}",
+            "args": ["-d", "${file}"]
+        },
+        {
+            "name": "Python Debugger: Module (Whole App)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "{{cookiecutter.project_name}}",
+            "args": []
+        }
+    ]
+}

@@ -5,12 +5,11 @@ description = "{{cookiecutter.project_description}}"
 authors = [{ name = "{{cookiecutter.author}}" }]
 readme = "README.md"
 keywords = ["python", "adventofcode", "aoc", "{{cookiecutter.year}}", "aoc{{cookiecutter.year}}"]
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.10,<4.0"
 classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -25,6 +24,8 @@ Documentation = "https://{{cookiecutter.author_github_handle}}.github.io/{{cooki
 
 [tool.uv]
 dev-dependencies = [
+    "austin-dist>=3.7.0",
+    "colorhash>=2.0.0",
     "pytest>=7.2.0",
     "pre-commit>=2.20.0",
     "deptry>=0.20.0",

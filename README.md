@@ -12,13 +12,14 @@
 
 This is a modern [cookiecutter](https://github.com/cookiecutter/cookiecutter) project for generating a skeleton Python-based [Advent of Code](https://adventofcode.com) toolkit. Ready for you to fill out and solve the puzzles each year in Python. You bring the brains; I'll bring the brawny... templates. Features included:
 
+- A fully containerized + devcontainer setup with Python 3.10 ready to go.
 - Performance measuring CLI for executing your daily solutions in swagger-y style.
 - Delightful [rich](https://github.com/Textualize/rich)-based colour highlighting.
 - [uv](https://docs.astral.sh/uv/) for dependency management.
 - Pre-commit hooks with [pre-commit](https://pre-commit.com/).
 - Formatting with [ruff](https://github.com/charliermarsh/ruff) and [prettier](https://prettier.io/).
 - Type checking with [mypy](https://mypy.readthedocs.io/en/stable/).
-- Testing with [pytest](https://docs.pytest.org/en/7.1.x/)
+- Testing with [pytest](https://docs.pytest.org/en/7.1.x/).
 - Containerization with [Docker](https://www.docker.com/).
 - Development environment with [VSCode devcontainers](https://code.visualstudio.com/docs/devcontainers/containers).
 - Made with lurve. :heart:
