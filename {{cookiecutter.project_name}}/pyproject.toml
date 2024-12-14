@@ -30,10 +30,12 @@ dev-dependencies = [
     "pre-commit>=2.20.0",
     "deptry>=0.20.0",
     "mypy>=0.991",
+    "numpy>=2.2.0",
     "psutil>=6.1.0",
     "rich>=13.9.4",
     "rich-argparse>=1.6.0",
     "ruff>=0.6.9",
+    "types-psutil>=6.1.0.20241102",
 ]
 
 [build-system]

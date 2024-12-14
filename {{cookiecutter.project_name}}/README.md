@@ -171,6 +171,16 @@ git commit -m "add: input files"
 
 But, please don't break the community rules, as above. :)
 
+## Help
+
+### Silencing Lint Errors
+
+To silence `ruff` errors, you can add a comment like: `# noqa: CODE`, e.g. `# noqa: C901` (X too complex).
+
+To silence `mypy` errors, you can add a comment like: `# type: ignore[CODE]`, e.g. `# type: ignore[operator]`.
+
+It's usually a good idea to listen to it, but no-one is going to judge you for it. :)
+
 ## Attribution / Where Can I Get My Own?
 
 For everyone else who isn't @{{cookiecutter.author_github_handle}}: This repository was created using [lskillen/cookiecutter-py-aoc](https://github.com/lskillen/cookiecutter-py-aoc), for a rockin' around the tree good time, developing Advent of Code solutions using Python+uv+ruff+mypy+pytest. Go there and find out how to get your own; yes, that means _you_!

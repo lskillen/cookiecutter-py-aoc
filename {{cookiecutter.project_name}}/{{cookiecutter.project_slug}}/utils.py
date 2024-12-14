@@ -11,7 +11,7 @@ from rich.table import Table
 def read_input(day: str) -> list[str]:
     """Read input for a day in."""
     path = pathlib.Path(__file__).parent.resolve()
-    with open(f"{path}/input/{day}.txt") as f:
+    with open(path / f"input/{day}.txt") as f:
         return [line.rstrip() for line in f.readlines()]
 
 
@@ -68,4 +68,5 @@ def print_sparse_grid(
             else:
                 row.append(f"[{empty_style}].[/{empty_style}]")
         grid.add_row(*row)
+    rich.print()
     rich.print(grid)

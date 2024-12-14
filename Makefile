@@ -18,6 +18,7 @@ bake-test:
 		open_source_license="MIT license"
 	@mv cookiecutter-py-aoc-example ../
 	@cd ../cookiecutter-py-aoc-example && git init -b main
+	@cd ../cookiecutter-py-aoc-example && make test
 
 
 .PHONY: install
@@ -50,16 +51,6 @@ build: clean-build ## Build wheel file
 clean-build: ## Clean build artifacts
 	@echo "🚀 Removing build artifacts"
 	@uv run python -c "import shutil; import os; shutil.rmtree('dist') if os.path.exists('dist') else None"
-
-.PHONY: publish
-publish: ## Publish a release to PyPI.
-	@echo "🚀 Publishing: Dry run."
-	@uvx --from build pyproject-build --installer uv
-	@echo "🚀 Publishing."
-	@uvx twine upload --repository-url https://upload.pypi.org/legacy/ dist/*
-
-.PHONY: build-and-publish
-build-and-publish: build publish ## Build and publish.
 
 .PHONY: help
 help:

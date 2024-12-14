@@ -5,25 +5,18 @@ from . import utils
 
 
 EXAMPLE = """
-EXAMPLE
-""".strip()
+DELETE_THIS_AND_PASTE_EXAMPLE_HERE
+"""
 
 
 def read_data(data: list[str] | None = None) -> list[str]:
-    """Read the data."""
+    """Read the data (describe it)."""
     return data or utils.read_example(EXAMPLE)
 
 
 def solve(data: list[str] | None = None) -> tuple[int, int]:
-    """
-    Solve the problem.
-
-    You can write docstests here too:
-
-    >>> solve()
-    (0, 0)
-    """
-    data = read_data(data=data)  # noqa: F841 (delete this)
+    """Solve the problem (describe it)."""
+    data = read_data(data=data)  # noqa: F841 (delete this comment)
     p1, p2 = 0, 0
     return p1, p2
 

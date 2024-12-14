@@ -3,17 +3,16 @@ from __future__ import annotations
 
 import argparse
 import ast
-import contextlib
 import dataclasses
 import functools
 import importlib
 import inspect
 import operator
 import os
+import pathlib
 import sys
 import textwrap
 import time
-import tracemalloc
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
@@ -30,9 +29,7 @@ from . import utils
 class PerfCounter:
     """Capture an inner block's execution time in nanoseconds, and cpu time."""
 
-    trace_memory: bool = False
     elapsed: float = 0.0  # nanoseconds
-    memory: float = 0.0  # max memory usage in bytes
     idle: float = 0.0
     iowait: float = 0.0
     irq: float = 0.0
@@ -48,15 +45,9 @@ class PerfCounter:
     def __enter__(self) -> PerfCounter:
         self.__t1 = self.__t2 = time.perf_counter_ns()
         self.__cpu = psutil.cpu_times_percent()  # Only for marking start
-        if self.trace_memory:
-            tracemalloc.start()
-            tracemalloc.take_snapshot()
         return self
 
     def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None:
-        if self.trace_memory:
-            tracemalloc.take_snapshot()
-            self.memory = tracemalloc.get_traced_memory()[1]
         self.__t2 = time.perf_counter_ns()
         self.__cpu = psutil.cpu_times_percent()  # psutil handles delta
         self.elapsed = self.__t2 - self.__t1
@@ -66,7 +57,6 @@ class PerfCounter:
         self.steal = self.__cpu.steal
         self.system = self.__cpu.system
         self.user = self.__cpu.user
-        tracemalloc.stop()
 
     def __add__(self, other: PerfCounter) -> PerfCounter:
         return self.__operator__(operator.add, other)
@@ -119,13 +109,6 @@ def generate_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "-e", "--example", default=False, action="store_true", help="use example inputs."
-    )
-    parser.add_argument(
-        "-m",
-        "--memory",
-        default=False,
-        action="store_true",
-        help="capture memory usage per day (note: this impacts performance!).",
     )
     parser.add_argument(
         "-p",
@@ -217,9 +200,18 @@ def run() -> None:  # noqa: C901
     modules = {}
     inputs = {}
     for day in days:
-        with contextlib.suppress(ImportError):
+        try:
             modules[day] = importlib.import_module(f".{day}", __package__)
             inputs[day] = utils.read_input(day)
+        except ImportError as exc:
+            path = pathlib.Path(__file__).parent.resolve()
+            filepath = path / f"{day}.py"
+            if os.path.exists(filepath):
+                console.print(f"[red]Error importing day {day} ({filepath}):[/red]")
+                console.print(f"[red][b]{exc}[/b][/red]")
+                console.print()
+                console.print("Check your code for syntax errors, then try again.")
+                return
 
     if args.suppress_output:
         for day, module in modules.items():
@@ -250,15 +242,13 @@ def run() -> None:  # noqa: C901
     table.add_column("p1", style="magenta")
     table.add_column("p2", style="green")
     table.add_column("cpu", justify="left", style="red")
-    if args.memory:
-        table.add_column("mem", justify="left", style="red")
-        table.caption = (
-            "[b u red]* Warning: Timings skewed due to memory profiling.[/b u red]"
-        )
     table.add_column("sloc", justify="right", style="yellow")
     table.add_column("chars", justify="right", style="yellow")
     table.add_column("t/seconds", justify="right", style="blue")
     table.add_column("t<1", justify="center", style="not dim bold gold3")
+
+    if args.profile:
+        table.caption = f"[b red]Note: Profiling was enabled; timings averaged over {args.profile} run(s) :rocket:"
 
     total_seconds = 0.0
     total_sloc = 0
@@ -283,14 +273,11 @@ def run() -> None:  # noqa: C901
             f"user {pc.user:0.2f}%, sys {pc.system:0.2f}%" if pc else "",
         ]
 
-        if pc and args.memory:
-            row.append(f"{pc.memory / (1024 * 1024):0.2f} MiB")
-
         row.extend([
             str(sloc),
             str(chars),
             f"{seconds:.6f}".ljust(8, "0"),
-            yes_no(seconds < 1) + (" *" if args.memory else ""),
+            yes_no(seconds < 1),
         ])
 
         table.add_row(*row)
@@ -302,12 +289,12 @@ def run() -> None:  # noqa: C901
             max_attempts = 1 if once else args.profile
             for _ in range(max_attempts):
                 attempt = "" if once else f"(profiling {_ + 1} of {max_attempts})"
-                with PerfCounter(trace_memory=args.memory) as pc:
+                with PerfCounter() as pc:
                     counters.append(pc)
                     status.update(f"[bold green]Solving day {day} {attempt}...")
                     p1, p2 = module.solve(data=inputs[day] if not args.example else None)
             pc = functools.reduce(operator.add, counters) / len(counters)
-            if p1 == 0 and p2 == 0 and args.days == "all":
+            if p1 == 0 and p2 == 0 and args.days == "all" and int(day) != 0:
                 # Ignore uncompleted days, unless explicitly mentioned
                 continue
             day_seconds = ns_to_s(pc.elapsed)
