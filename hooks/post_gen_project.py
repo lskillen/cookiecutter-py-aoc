@@ -35,10 +35,6 @@ def run() -> None:
         with open(day_path, "w") as f:
             f.write(contents)
 
-        # Generate empty input file
-        with open(os.path.join(prefix_path, "input", f"{day}.txt"), "w") as f:
-            f.write("")
-
     if "{{cookiecutter.dockerfile}}" != "y":
         remove_file("Dockerfile")
 
