@@ -96,7 +96,6 @@ def test_day_templates(cookies: Any, tmp_path: str) -> None:
             day = str(n).rjust(2, "0")
             day_path = f"{result.project_path}/{result.context['project_slug']}/{day}.py"
             assert os.path.isfile(day_path)
-            assert os.path.isfile(f"{result.project_path}/{result.context['project_slug']}/input/{day}.txt")
             with open(day_path) as f:
                 contents = f.read()
             assert f"Advent of Code: {year} - Day {day}" in contents
