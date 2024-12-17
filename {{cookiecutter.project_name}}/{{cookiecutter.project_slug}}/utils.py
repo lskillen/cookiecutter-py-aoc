@@ -5,6 +5,7 @@ import pathlib
 
 import rich
 from colorhash import ColorHash
+from rich.console import Control
 from rich.table import Table
 
 
@@ -30,8 +31,9 @@ def print_sparse_grid(
     max_y: int,
     coords: dict[tuple[int, int], str],
     styles: dict[str, str] | None = None,
+    styles_at: dict[tuple[int, int], str] | None = None,
     default_style: str | None = None,
-    empty_style: str = "dim grey",
+    empty_style: str = "dim black",
 ) -> None:
     """
     Print a sparsely populated grid (i.e. size plus contents).
@@ -48,25 +50,37 @@ def print_sparse_grid(
     coords[5, 5] = "a"
     utils.print_sparse_grid(max_x=10, max_y=10, coords=coords, styles={"#": "red"})
     """
+    console = rich.get_console()
+    console.control(Control.home())
     grid = Table.grid(pad_edge=True)
     for _y in range(max_y):
         grid.add_column(justify="center", vertical="middle", ratio=1)
 
     styles = styles or {}
+    styles_at = styles_at or {}
     for y in range(max_y):
         row = []
         for x in range(max_x):
-            if symbol := coords.get((x, y)):
-                if (style := styles.get(symbol)) is None:
-                    if default_style:
-                        style = default_style
-                    else:
-                        c = ColorHash(symbol)
-                        style = f"bold {c.hex}"
-                    styles[symbol] = style
-                row.append(f"[{style}]{symbol}[/{style}]")
+            if not (symbol := coords.get((x, y))):
+                symbol = "."
+            if (style := styles_at.get((x, y))) or (style := styles.get(symbol)):
+                pass
             else:
-                row.append(f"[{empty_style}].[/{empty_style}]")
+                if symbol == ".":
+                    style = empty_style
+                elif default_style:
+                    style = default_style
+                else:
+                    c = ColorHash(symbol)
+                    style = f"bold {c.hex}"
+                styles[symbol] = style
+            row.append(f"[{style}]{symbol}[/{style}]")
         grid.add_row(*row)
     rich.print()
     rich.print(grid)
+
+
+def clear_screen() -> None:
+    """Clear the screen."""
+    console = rich.get_console()
+    console.clear()

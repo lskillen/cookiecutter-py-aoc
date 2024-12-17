@@ -16,6 +16,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
+import numpy as np
 import psutil
 import pytest
 from rich.console import Console
@@ -116,8 +117,15 @@ def generate_parser() -> argparse.ArgumentParser:
         nargs="?",
         const=10,
         type=int,
-        help="execute tests multiple times (default: 10) to get better performance statistics."
-        "",
+        help="execute tests multiple times (default: 10) to get better performance statistics.",
+    )
+    parser.add_argument(
+        "-P",
+        "--percentile",
+        nargs="?",
+        default=5,
+        type=int,
+        help="for profiling, remove outliers beyond the nth percentile (default: 5).",
     )
     parser.add_argument(
         "-s",
@@ -248,7 +256,16 @@ def run() -> None:  # noqa: C901
     table.add_column("t<1", justify="center", style="not dim bold gold3")
 
     if args.profile:
-        table.caption = f"[b red]Note: Profiling was enabled; timings averaged over {args.profile} run(s) :rocket:"
+        percentile = max(1, min(25, args.percentile))  # 75th to 99th percentile
+        table.caption = " ".join(
+            textwrap.dedent(
+                f"""
+                [b red][yellow]Note:[/yellow] Profiling averaged
+                over {args.profile} run(s)
+                /w <{percentile},>{100 - percentile} percentile removed :rocket:
+                """
+            ).splitlines()
+        )
 
     total_seconds = 0.0
     total_sloc = 0
@@ -293,8 +310,16 @@ def run() -> None:  # noqa: C901
                     counters.append(pc)
                     status.update(f"[bold green]Solving day {day} {attempt}...")
                     p1, p2 = module.solve(data=inputs[day] if not args.example else None)
+            if len(counters) > 2:
+                # For "fairness" (subjective), we remove the interquartile range (IQR) of
+                # the timings, and then average the rest.
+                elapsed = np.array([counter.elapsed for counter in counters])
+                lower, upper = np.percentile(elapsed, [percentile, 100 - percentile])
+                counters = [
+                    counter for counter in counters if lower <= counter.elapsed <= upper
+                ]
             pc = functools.reduce(operator.add, counters) / len(counters)
-            if p1 == 0 and p2 == 0 and args.days == "all" and int(day) != 0:
+            if not p1 and not p2 and args.days == "all" and int(day) != 0:
                 # Ignore uncompleted days, unless explicitly mentioned
                 continue
             day_seconds = ns_to_s(pc.elapsed)
