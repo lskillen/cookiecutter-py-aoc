@@ -25,3 +25,5 @@ repos:
     rev: "v1.13.0"
     hooks:
       - id: mypy
+        additional_dependencies:
+          ["numpy>=2.2.0", "types-psutil>=6.1.0.20241102"]
