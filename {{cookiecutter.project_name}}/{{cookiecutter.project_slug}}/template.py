@@ -14,7 +14,7 @@ def read_data(data: list[str] | None = None) -> list[str]:
     return data or utils.read_example(EXAMPLE)
 
 
-def solve(data: list[str] | None = None) -> tuple[int, int]:
+def solve(data: list[str] | None = None) -> tuple[int | str, int | str]:
     """Solve the problem (describe it)."""
     data = read_data(data=data)  # noqa: F841 (delete this comment)
     p1, p2 = 0, 0
